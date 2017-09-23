@@ -10,7 +10,8 @@
   color: 'black',
   padding: '5px',
   width: '200px',
-  backgroundColor: 'darkgrey'
+  backgroundColor: 'darkgrey',
+  boxShadow: '0px 0xp 5px grey'
 }
 
 - Click Event: jlib.click(element, function (ev) {...});
