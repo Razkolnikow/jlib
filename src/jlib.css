@@ -1,0 +1,48 @@
+.jlib-button {
+  border-radius: 5px;
+  box-shadow: 5px 5px grey;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+#jlib-content {
+  margin: 50px;
+  padding: 15px;
+}
+
+.jlib-select {
+  width: 75px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.jlib-table {
+  border-collapse: collapse;
+}
+
+.jlib-table, .jlib-table th, .jlib-table td {
+  border: 1px solid black;
+}
+
+.jlib-table th, .jlib-table td {
+  padding: 10px;
+}
+
+.jlib-modal {
+  position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+}
+
+.jlib-modal-content {
+  width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #fff;
+}
