@@ -1,0 +1,2 @@
+# jlib
+Small JavaScript library
