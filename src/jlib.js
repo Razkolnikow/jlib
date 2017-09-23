@@ -102,6 +102,12 @@ var jlib = {
         child.style.backgroundColor = 'darkgrey';
       }
 
+      if (options && options.boxShadow) {
+        child.style.boxShadow = options.boxShadow;
+      } else {
+        child.style.boxShadow = '0px 0px 5px grey';
+      }
+
       element.addEventListener('mouseover', function (ev) {
         child.style.display = 'block';
       });
