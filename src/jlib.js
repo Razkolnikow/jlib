@@ -132,5 +132,70 @@ var jlib = {
           modal.style.display = 'none'
         });
       });
+    },
+    notify: function (message, time, options) {
+      if (options && typeof(options) !== 'object') {
+        throw new Error('Options should be an object!');
+      }
+
+      var noty = document.createElement('SPAN');
+      noty.style.position = 'absolute';
+      if (options && options.top) {
+        noty.style.top = options.top;
+      } else {
+        noty.style.top = '30px';
+      }
+
+      if (options && options.right) {
+        noty.style.right = options.right;
+      } else {
+        noty.style.right = '30px';
+      }
+
+      noty.textContent = message;
+
+      if (options && options.backgroundColor) {
+        noty.style.backgroundColor = options.backgroundColor;
+      } else {
+        noty.style.backgroundColor = 'rgb(127, 227, 74)';
+      }
+
+      if (options && options.borderRadius) {
+        noty.style.borderRadius = options.borderRadius;
+      } else {
+        noty.style.borderRadius = '5px';
+      }
+
+      if (options && options.width) {
+        noty.style.width = options.width;
+      } else {
+        noty.style.width = '150px';
+      }
+
+      if (options && options.padding) {
+        noty.style.padding = options.padding;
+      } else {
+        noty.style.padding = '10px';
+      }
+
+      if (options && options.fontFamily) {
+        noty.style.fontFamily = options.fontFamily;
+      } else {
+        noty.style.fontFamily = 'Sans-Serif';
+      }
+
+      noty.style.zIndex = 999;
+      if (options && options.color) {
+        noty.style.color = options.color;
+      }  else {
+        noty.style.color = 'white';
+      }
+
+      noty.style.wordWrap = 'break-word';
+      document.body.appendChild(noty);
+
+      setTimeout(function () {
+        noty.style.display = 'none';
+      }, time);
     }
 }
