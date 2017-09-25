@@ -192,6 +192,7 @@ var jlib = {
       }
 
       noty.style.wordWrap = 'break-word';
+      noty.style.boxShadow = '0px 0px 5px darkgrey';
       document.body.appendChild(noty);
 
       setTimeout(function () {
