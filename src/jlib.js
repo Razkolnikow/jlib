@@ -193,8 +193,16 @@ var jlib = {
 
       noty.style.wordWrap = 'break-word';
       noty.style.boxShadow = '0px 0px 5px darkgrey';
+      noty.style.cursor = 'pointer';
       document.body.appendChild(noty);
 
+      if (!time) {
+        time = 4000;
+      }
+
+      noty.addEventListener('click', function (ev) {
+        ev.target.remove();
+      })
       setTimeout(function () {
         noty.remove();
       }, time);
