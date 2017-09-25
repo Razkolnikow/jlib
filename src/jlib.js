@@ -195,7 +195,7 @@ var jlib = {
       document.body.appendChild(noty);
 
       setTimeout(function () {
-        noty.style.display = 'none';
+        noty.remove();
       }, time);
     }
 }
