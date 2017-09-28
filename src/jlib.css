@@ -46,3 +46,20 @@
 	border-radius: 10px;
 	background: #fff;
 }
+
+.jlib-button-push {
+  box-shadow: 0px 7px 1px lightgrey;
+  border: 1px solid grey;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.jlib-button-push:hover {
+  cursor: pointer;
+  background-color: darkgrey;
+}
+
+.jlib-button-push:active {
+  box-shadow: 0px 5px 1px lightgrey;
+  transform: translateY(2px);
+}
