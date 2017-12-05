@@ -206,5 +206,99 @@ var jlib = {
       setTimeout(function () {
         noty.remove();
       }, time);
+    },
+    chatBox: function (id, options) {
+      if (options && typeof(options) !== 'object') {
+        throw new Error('Options should be an object.')
+      }
+
+      var chat = document.createElement('span');
+      chat.id = id;
+      chat.style.position = 'absolute';
+      if (options && options.top) {
+        chat.style.top = options.top;
+      } else {
+        chat.style.bottom = '30px';
+      }
+
+      if (options && options.right) {
+        chat.style.right = options.right;
+      } else {
+        chat.style.right = '30px';
+      }
+
+      if (options && options.backgroundColor) {
+        chat.style.backgroundColor = options.backgroundColor;
+      } else {
+        chat.style.backgroundColor = 'rgb(127, 227, 74)';
+      }
+
+      if (options && options.borderRadius) {
+        chat.style.borderRadius = options.borderRadius;
+      } else {
+        chat.style.borderRadius = '5px';
+      }
+
+      if (options && options.width) {
+        chat.style.width = options.width;
+      } else {
+        chat.style.width = '350px';
+      }
+
+      if (options && options.padding) {
+        chat.style.padding = options.padding;
+      } else {
+        chat.style.padding = '10px';
+      }
+
+      if (options && options.fontFamily) {
+        chat.style.fontFamily = options.fontFamily;
+      } else {
+        chat.style.fontFamily = 'Sans-Serif';
+      }
+
+      chat.style.zIndex = 999;
+
+      if (options && options.color) {
+        chat.style.color = options.color;
+      }  else {
+        chat.style.color = 'white';
+      }
+
+      chat.style.wordWrap = 'break-word';
+      chat.style.boxShadow = '0px 0px 5px darkgrey';
+
+      var inputMessage = document.createElement('INPUT');
+      inputMessage.setAttribute('type', 'text');
+      var displayedText = document.createElement('DIV');
+      var sendButton = document.createElement('INPUT');
+      sendButton.setAttribute('type', 'button');
+      sendButton.setAttribute('value', 'send');
+      sendButton.addEventListener('click', function (ev) {
+        var message = document.createTextNode(inputMessage.value);
+        displayedText.appendChild(message);
+        var newLine = document.createElement('br');
+        displayedText.appendChild(newLine);
+      });
+
+      var closeButton = document.createElement('INPUT');
+      closeButton.setAttribute('type', 'button');
+      closeButton.setAttribute('value', 'close');
+      closeButton.addEventListener('click', function (ev) {
+        chat.remove();
+      });
+
+      inputMessage.addEventListener('keyup', function (ev) {
+        ev.preventDefault();
+        if (ev.keyCode === 13) {
+          sendButton.click();
+        }
+      });
+      chat.appendChild(displayedText);
+      chat.appendChild(inputMessage);
+      chat.appendChild(sendButton);
+      chat.appendChild(closeButton);
+
+      document.body.appendChild(chat);
     }
 }
