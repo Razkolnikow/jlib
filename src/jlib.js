@@ -1,3 +1,67 @@
+function setCssOptionsForPopups (element, options) {
+  element.style.position = 'absolute';
+  if (options && options.top) {
+    element.style.top = options.top;
+  } else {
+    element.style.bottom = '30px';
+  }
+
+  if (options && options.right) {
+    element.style.right = options.right;
+  } else {
+    element.style.right = '30px';
+  }
+
+  if (options && options.backgroundColor) {
+    element.style.backgroundColor = options.backgroundColor;
+  } else {
+    // element.style.backgroundColor = 'rgb(127, 227, 74)';
+    element.style.backgroundColor = 'white';
+  }
+
+  if (options && options.borderRadius) {
+    element.style.borderRadius = options.borderRadius;
+  } else {
+    element.style.borderRadius = '5px';
+  }
+
+  if (options && options.width) {
+    element.style.width = options.width;
+  } else {
+    element.style.width = '350px';
+  }
+
+  if (options && options.padding) {
+    element.style.padding = options.padding;
+  } else {
+    element.style.padding = '10px';
+  }
+
+  if (options && options.fontFamily) {
+    element.style.fontFamily = options.fontFamily;
+  } else {
+    element.style.fontFamily = 'Sans-Serif';
+  }
+
+  if (options && options.border) {
+    element.style.border = options.border
+  } else  {
+    element.style.border = '1px solid black';
+  }
+
+  element.style.zIndex = 999;
+
+  if (options && options.color) {
+    element.style.color = options.color;
+  }  else {
+    element.style.color = 'black';
+  }
+
+  // chat.style.lineHight = '3';
+  element.style.wordWrap = 'break-word';
+  element.style.boxShadow = '0px 0px 5px darkgrey';
+}
+
 var jlib = {
     getFirstByClass: function (className) {
       return document.getElementsByClassName(className)[0];
@@ -214,63 +278,65 @@ var jlib = {
 
       var chat = document.createElement('span');
       chat.id = id;
-      chat.style.position = 'absolute';
-      if (options && options.top) {
-        chat.style.top = options.top;
-      } else {
-        chat.style.bottom = '30px';
-      }
+      // chat.style.position = 'absolute';
+      // if (options && options.top) {
+      //   chat.style.top = options.top;
+      // } else {
+      //   chat.style.bottom = '30px';
+      // }
 
-      if (options && options.right) {
-        chat.style.right = options.right;
-      } else {
-        chat.style.right = '30px';
-      }
+      // if (options && options.right) {
+      //   chat.style.right = options.right;
+      // } else {
+      //   chat.style.right = '30px';
+      // }
 
-      if (options && options.backgroundColor) {
-        chat.style.backgroundColor = options.backgroundColor;
-      } else {
-        // chat.style.backgroundColor = 'rgb(127, 227, 74)';
-        chat.style.backgroundColor = 'white';
-      }
+      // if (options && options.backgroundColor) {
+      //   chat.style.backgroundColor = options.backgroundColor;
+      // } else {
+      //   // chat.style.backgroundColor = 'rgb(127, 227, 74)';
+      //   chat.style.backgroundColor = 'white';
+      // }
 
-      if (options && options.borderRadius) {
-        chat.style.borderRadius = options.borderRadius;
-      } else {
-        chat.style.borderRadius = '5px';
-      }
+      // if (options && options.borderRadius) {
+      //   chat.style.borderRadius = options.borderRadius;
+      // } else {
+      //   chat.style.borderRadius = '5px';
+      // }
 
-      if (options && options.width) {
-        chat.style.width = options.width;
-      } else {
-        chat.style.width = '350px';
-      }
+      // if (options && options.width) {
+      //   chat.style.width = options.width;
+      // } else {
+      //   chat.style.width = '350px';
+      // }
 
-      if (options && options.padding) {
-        chat.style.padding = options.padding;
-      } else {
-        chat.style.padding = '10px';
-      }
+      // if (options && options.padding) {
+      //   chat.style.padding = options.padding;
+      // } else {
+      //   chat.style.padding = '10px';
+      // }
 
-      if (options && options.fontFamily) {
-        chat.style.fontFamily = options.fontFamily;
-      } else {
-        chat.style.fontFamily = 'Sans-Serif';
-      }
+      // if (options && options.fontFamily) {
+      //   chat.style.fontFamily = options.fontFamily;
+      // } else {
+      //   chat.style.fontFamily = 'Sans-Serif';
+      // }
 
-      if (options && options.border) {
-        chat.style.border = options.border
-      } else  {
-        chat.style.border = '1px solid black';
-      }
+      // if (options && options.border) {
+      //   chat.style.border = options.border
+      // } else  {
+      //   chat.style.border = '1px solid black';
+      // }
 
-      chat.style.zIndex = 999;
+      // chat.style.zIndex = 999;
 
-      if (options && options.color) {
-        chat.style.color = options.color;
-      }  else {
-        chat.style.color = 'black';
-      }
+      // if (options && options.color) {
+      //   chat.style.color = options.color;
+      // }  else {
+      //   chat.style.color = 'black';
+      // }
+
+      setCssOptionsForPopups(chat, options);
 
       // chat.style.lineHight = '3';
       chat.style.wordWrap = 'break-word';
@@ -329,7 +395,61 @@ var jlib = {
 
       document.body.appendChild(chat);
     },
-    chatInviteBox: function (id, options) {
-      
+    chatInviteBox: function (id, from, options) {
+      if (options && typeof(options) !== 'object') {
+        throw new Error('Options should be an object.')
+      }
+
+      var chatInviteBox = document.createElement('span');
+      chatInviteBox.id = id;
+
+      if (!options) {
+        options = {};
+        options.backgroundColor = 'rgb(127, 227, 74)';
+      } else if (options && !ptions.backgroundColor) {
+        options.backgroundColor = 'rgb(127, 227, 74)';
+      }
+
+      setCssOptionsForPopups(chatInviteBox, options);
+
+      document.body.appendChild(chatInviteBox);
+
+      var textDiv = document.createElement('DIV');
+      textDiv.textContent = 'You have new chat invitation from ' + from;
+      textDiv.style.fontWeight = '800';
+      chatInviteBox.appendChild(textDiv);
+
+      var acceptButton = document.createElement('INPUT');
+      var rejectButton = document.createElement('INPUT');
+
+      acceptButton.setAttribute('type', 'button');
+      acceptButton.className = 'jlib-button';
+      acceptButton.setAttribute('value', 'Accept');
+      acceptButton.style.marginTop = '20px';
+      var acceptBtnId = '';
+      var rejectButtonId = '';
+
+      if (options && options.acceptBtnId) {
+        acceptBtnId = options.acceptBtnId;
+      }
+
+      if (options && options.rejectBtnId) {
+        rejectButton.id = options.rejectBtnId;
+      }      
+
+      rejectButton.setAttribute('type', 'button');
+      rejectButton.setAttribute('value', 'Reject');
+      rejectButton.className = 'jlib-button';
+      rejectButton.style.marginTop = '20px';
+
+      acceptButton.id = acceptBtnId;
+      rejectButton.id = rejectButtonId;
+
+      chatInviteBox.appendChild(acceptButton);
+      chatInviteBox.appendChild(rejectButton);
+
+      rejectButton.addEventListener('click', function (ev) {
+        chatInviteBox.remove();
+      });
     }
 }
