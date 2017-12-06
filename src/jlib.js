@@ -282,8 +282,9 @@ var jlib = {
       var sendButton = document.createElement('INPUT');
       sendButton.setAttribute('type', 'button');
       sendButton.setAttribute('value', 'send');
+
       sendButton.addEventListener('click', function (ev) {
-        var message = document.createTextNode(inputMessage.value);
+        var message = document.createTextNode('Me: ' + inputMessage.value);
         displayedText.appendChild(message);
         var newLine = document.createElement('br');
         displayedText.appendChild(newLine);
@@ -318,7 +319,7 @@ var jlib = {
         headerElement.textContent = options.headerContent;
       } else {
         headerElement.textContent = 'Test';
-      }
+      }      
 
       chat.appendChild(headerElement);
       chat.appendChild(displayedText);
