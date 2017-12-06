@@ -230,7 +230,8 @@ var jlib = {
       if (options && options.backgroundColor) {
         chat.style.backgroundColor = options.backgroundColor;
       } else {
-        chat.style.backgroundColor = 'rgb(127, 227, 74)';
+        // chat.style.backgroundColor = 'rgb(127, 227, 74)';
+        chat.style.backgroundColor = 'white';
       }
 
       if (options && options.borderRadius) {
@@ -257,14 +258,21 @@ var jlib = {
         chat.style.fontFamily = 'Sans-Serif';
       }
 
+      if (options && options.border) {
+        chat.style.border = options.border
+      } else  {
+        chat.style.border = '1px solid black';
+      }
+
       chat.style.zIndex = 999;
 
       if (options && options.color) {
         chat.style.color = options.color;
       }  else {
-        chat.style.color = 'white';
+        chat.style.color = 'black';
       }
 
+      // chat.style.lineHight = '3';
       chat.style.wordWrap = 'break-word';
       chat.style.boxShadow = '0px 0px 5px darkgrey';
 
@@ -279,6 +287,7 @@ var jlib = {
         displayedText.appendChild(message);
         var newLine = document.createElement('br');
         displayedText.appendChild(newLine);
+        inputMessage.value = '';
       });
 
       var closeButton = document.createElement('INPUT');

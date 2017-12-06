@@ -19,3 +19,4 @@
 - Add option to dropdown: jlib.addOptionToDropdown(dropdownElement, value, text);
 - Notify: jlib.notify(message, time, options: optional);
 - Notify options example: options = { top: '', right: '', color: '', backgroundColor: '', borderRadius: '', fontFamily: '',  }
+- ChatBox: jlib.chatBox(id, options);
