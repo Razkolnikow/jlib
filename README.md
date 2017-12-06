@@ -20,3 +20,4 @@
 - Notify: jlib.notify(message, time, options: optional);
 - Notify options example: options = { top: '', right: '', color: '', backgroundColor: '', borderRadius: '', fontFamily: '',  }
 - ChatBox: jlib.chatBox(id, options);
+- ChatInviteBox: jlib.chatInviteBox(id, from, options);
