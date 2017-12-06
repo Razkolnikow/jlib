@@ -328,5 +328,8 @@ var jlib = {
       chat.appendChild(closeButton);
 
       document.body.appendChild(chat);
+    },
+    chatInvite: function () {
+      
     }
 }
