@@ -329,7 +329,7 @@ var jlib = {
 
       document.body.appendChild(chat);
     },
-    chatInvite: function () {
+    chatInviteBox: function (id, options) {
       
     }
 }
