@@ -303,6 +303,24 @@ var jlib = {
           sendButton.click();
         }
       });
+
+      var headerElement = document.createElement('div');
+      headerElement.style.marginTop = '-10px';
+      headerElement.style.marginBottom = '15px';
+      headerElement.style.marginLeft = '-10px';
+      headerElement.style.textAlign = 'center';
+      headerElement.style.borderTopLeftRadius = '5px';
+      headerElement.style.borderTopRightRadius = '5px';
+      headerElement.style.backgroundColor = 'gray';
+      headerElement.style.width = '102.9%';
+      headerElement.style.padding = '5px';
+      if (options && options.headerContent) {
+        headerElement.textContent = options.headerContent;
+      } else {
+        headerElement.textContent = 'Test';
+      }
+
+      chat.appendChild(headerElement);
       chat.appendChild(displayedText);
       chat.appendChild(inputMessage);
       chat.appendChild(sendButton);
