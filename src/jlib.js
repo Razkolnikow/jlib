@@ -1,5 +1,5 @@
 function setCssOptionsForPopups (element, options) {
-  element.style.position = 'absolute';
+  element.style.position = 'fixed';
   if (options && options.top) {
     element.style.top = options.top;
   } else {
