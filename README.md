@@ -2,8 +2,8 @@
 ## Small JavaScript library
 
 - Modal dialog: jlib.modal(idOfWrapperElement, idOfButton);
-- Tooltip: jlib.tooltip(wrapperElement, optionsObject);
-- optionsObjectExample = {
+- Tooltip: jlib.tooltip(wrapperElement, optionsObject);  
+**optionsObjectExample** = {
   zIndex: '999',
   border: '1px solid black',
   borderRadius: '5px',
@@ -15,8 +15,8 @@
 }
 
 - Click Event: jlib.click(element, function (ev) {...});
-- Generate Dropdown: jlib.generateDropdown(className: optional, id: optional) - returns SELECT element;
-- Add option to dropdown: jlib.addOptionToDropdown(dropdownElement, value, text);
+- Generate Dropdown: jlib.generateDropdown(className: optional, id: optional) - returns SELECT element;  
+**Add option to dropdown**: jlib.addOptionToDropdown(dropdownElement, value, text);
 - Notify: jlib.notify(message, time, options: optional);  
 **Notify options example**: options = { top: '', right: '', color: '', backgroundColor: '', borderRadius: '', fontFamily: '',  }
 - ChatBox: jlib.chatBox(id, fromName, messageAreaId, options);  
