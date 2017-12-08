@@ -20,11 +20,11 @@
 - Notify: jlib.notify(message, time, options: optional);  
 **Notify options example**: options = { top: '', right: '', color: '', backgroundColor: '', borderRadius: '', fontFamily: '',  }
 - ChatBox: jlib.chatBox(id, fromName, messageAreaId, options);  
-- **ChatBox options example**: options = 
+**ChatBox options example**: options = 
 { top: '', right: '', color: '', backgroundColor: '', borderRadius: '', 
   width: '', padding: '', fontFamily: '', border: '', sendBtnId: '', sendFunction: function () { // do something in click event of send button} }
 - ChatInviteBox: jlib.chatInviteBox(id, fromName, fromId, options);
 - fromId param is set as value of hiddenInput with id 'senderId'  
-- **ChatInviteBox options example**: options =
+**ChatInviteBox options example**: options =
 { top: '', right: '', color: '', backgroundColor: '', borderRadius: '', 
   width: '', padding: '', fontFamily: '', border: '', acceptBtnId: '', rejectBtnId: '', receiverId: '' }
