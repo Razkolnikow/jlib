@@ -359,6 +359,10 @@ var jlib = {
         var newLine = document.createElement('br');
         displayedText.appendChild(newLine);
         inputMessage.value = '';
+
+        if (optoins && options.sendFunction) {
+          options.sendFunction();
+        }
       });
 
       var closeButton = document.createElement('INPUT');
@@ -399,7 +403,7 @@ var jlib = {
 
       document.body.appendChild(chat);
     },
-    chatInviteBox: function (id, from, options) {
+    chatInviteBox: function (id, fromName, fromId, options) {
       if (options && typeof(options) !== 'object') {
         throw new Error('Options should be an object.')
       }
@@ -419,7 +423,7 @@ var jlib = {
       document.body.appendChild(chatInviteBox);
 
       var textDiv = document.createElement('DIV');
-      textDiv.textContent = 'You have new chat invitation from ' + from;
+      textDiv.textContent = 'You have new chat invitation from ' + fromName;
       textDiv.style.fontWeight = '800';
       chatInviteBox.appendChild(textDiv);
 
