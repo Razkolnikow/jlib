@@ -456,6 +456,7 @@ var jlib = {
       var hiddeInputSenderId = document.createElement('INPUT');
       hiddeInputSenderId.setAttribute('type', 'hidden');
       hiddeInputSenderId.setAttribute('value', fromId);
+      hiddeInputSenderId.id = 'senderId';
 
       chatInviteBox.appendChild(acceptButton);
       chatInviteBox.appendChild(rejectButton);
