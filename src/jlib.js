@@ -458,9 +458,21 @@ var jlib = {
       hiddeInputSenderId.setAttribute('value', fromId);
       hiddeInputSenderId.id = 'senderId';
 
+      var hiddenInputReceiverId = document.createElement('INPUT');
+      hiddenInputReceiverId.setAttribute('type', 'hidden');
+      var receiverId = '';
+
+      if (options && options.receiverId) {
+
+      }
+
+      hiddenInputReceiverId.setAttribute('value', receiverId);
+      hiddenInputReceiverId.id = 'receiverId';
+
       chatInviteBox.appendChild(acceptButton);
       chatInviteBox.appendChild(rejectButton);
       chatInviteBox.appendChild(hiddeInputSenderId);
+      chatInviteBox.appendChild(receiverId);
 
       rejectButton.addEventListener('click', function (ev) {
         chatInviteBox.remove();

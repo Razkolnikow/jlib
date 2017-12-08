@@ -27,4 +27,4 @@
 - fromId param is set as value of hiddenInput with id 'senderId'
 - ChatInviteBox options example: options = 
 { top: '', right: '', color: '', backgroundColor: '', borderRadius: '', 
-  width: '', padding: '', fontFamily: '', border: '', acceptBtnId: '', rejectBtnId: '' }
+  width: '', padding: '', fontFamily: '', border: '', acceptBtnId: '', rejectBtnId: '', receiverId: '' }
