@@ -360,7 +360,7 @@ var jlib = {
         displayedText.appendChild(newLine);
         inputMessage.value = '';
 
-        if (optoins && options.sendFunction) {
+        if (options && options.sendFunction) {
           options.sendFunction();
         }
       });
