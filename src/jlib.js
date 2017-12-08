@@ -453,8 +453,13 @@ var jlib = {
       acceptButton.id = acceptBtnId;
       rejectButton.id = rejectButtonId;
 
+      var hiddeInputSenderId = document.createElement('INPUT');
+      hiddeInputSenderId.setAttribute('type', 'hidden');
+      hiddeInputSenderId.setAttribute('value', fromId);
+
       chatInviteBox.appendChild(acceptButton);
       chatInviteBox.appendChild(rejectButton);
+      chatInviteBox.appendChild(hiddeInputSenderId);
 
       rejectButton.addEventListener('click', function (ev) {
         chatInviteBox.remove();
