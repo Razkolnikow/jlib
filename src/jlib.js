@@ -271,7 +271,7 @@ var jlib = {
         noty.remove();
       }, time);
     },
-    chatBox: function (id, options) {
+    chatBox: function (id, messageAreaId, options) {
       if (options && typeof(options) !== 'object') {
         throw new Error('Options should be an object.')
       }
@@ -345,6 +345,7 @@ var jlib = {
       var inputMessage = document.createElement('INPUT');
       inputMessage.setAttribute('type', 'text');
       var displayedText = document.createElement('DIV');
+      displayedText.id = messageAreaId;
       var sendButton = document.createElement('INPUT');
       sendButton.setAttribute('type', 'button');
       sendButton.setAttribute('value', 'send');
