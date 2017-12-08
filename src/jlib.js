@@ -348,6 +348,9 @@ var jlib = {
       var sendButton = document.createElement('INPUT');
       sendButton.setAttribute('type', 'button');
       sendButton.setAttribute('value', 'send');
+      if (options && options.sendBtnId) {
+        sendButton.id = options.sendBtnId;
+      }
 
       sendButton.addEventListener('click', function (ev) {
         var message = document.createTextNode('Me: ' + inputMessage.value);
@@ -406,7 +409,7 @@ var jlib = {
       if (!options) {
         options = {};
         options.backgroundColor = 'rgb(127, 227, 74)';
-      } else if (options && !ptions.backgroundColor) {
+      } else if (options && !options.backgroundColor) {
         options.backgroundColor = 'rgb(127, 227, 74)';
       }
 
