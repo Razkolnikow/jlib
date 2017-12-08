@@ -463,7 +463,7 @@ var jlib = {
       var receiverId = '';
 
       if (options && options.receiverId) {
-
+        receiverId = options.receiverId;
       }
 
       hiddenInputReceiverId.setAttribute('value', receiverId);
