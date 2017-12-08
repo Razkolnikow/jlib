@@ -472,7 +472,7 @@ var jlib = {
       chatInviteBox.appendChild(acceptButton);
       chatInviteBox.appendChild(rejectButton);
       chatInviteBox.appendChild(hiddeInputSenderId);
-      chatInviteBox.appendChild(receiverId);
+      chatInviteBox.appendChild(hiddenInputReceiverId);
 
       rejectButton.addEventListener('click', function (ev) {
         chatInviteBox.remove();
