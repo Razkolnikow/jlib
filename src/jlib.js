@@ -418,6 +418,10 @@ var jlib = {
         options.backgroundColor = 'rgb(127, 227, 74)';
       }
 
+      if (options && options.opacity) {
+        chatInviteBox.style.opacity = options.opacity;
+      }
+
       setCssOptionsForPopups(chatInviteBox, options);
 
       document.body.appendChild(chatInviteBox);
