@@ -63,3 +63,17 @@
   box-shadow: 0px 5px 1px lightgrey;
   transform: translateY(2px);
 }
+
+.jlib-chatbox {
+  
+}
+
+.jlib-dragging {
+  border: 1px solid royalblue;
+}
+
+.jlib-hole {
+  border: 1px solid black;
+  min-width: 50px;
+  min-height: 100px;
+}

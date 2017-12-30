@@ -481,5 +481,48 @@ var jlib = {
       rejectButton.addEventListener('click', function (ev) {
         chatInviteBox.remove();
       });
+    },
+    makeDraggable : function (dragClassname, dropzoneClassname) {
+      dragClassname = dragClassname || 'jlib-item';
+      dropzoneClassname = dropzoneClassname || 'jlib-hole';
+      
+      var draggedItem;
+
+      var elements = document.getElementsByClassName(dragClassname);
+      for (let index = 0; index < elements.length; index++) {
+        const element = elements[index];
+        element.setAttribute('draggable', true)
+        element.addEventListener('dragstart', dragging)
+        element.addEventListener('dragend', draggingEnded)
+      }
+
+      var holes = document.getElementsByClassName(dropzoneClassname);
+      for (let index = 0; index < holes.length; index++) {
+        const hole = holes[index];
+        hole.addEventListener('dragenter', preventDefault)
+        hole.addEventListener('dragover', preventDefault)
+        hole.addEventListener('drop', dropItem)
+      }
+
+      function dragging(e) {
+        e.target.className += ' jlib-dragging';
+        draggedItem = e.target;
+      }
+
+      function draggingEnded(e) {
+        e.target.classList.remove('jlib-dragging');
+      }
+
+      function preventDefault(e) {
+        e.preventDefault();
+      }
+
+      function dropItem(e) {
+        var hole1 = e.target;
+        if (hole1.className.indexOf(dropzoneClassname) >= 0 
+            && hole1.children.length === 0) {
+            hole1.appendChild(draggedItem);
+        }
+      }
     }
 }
