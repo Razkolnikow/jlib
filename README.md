@@ -29,4 +29,4 @@
 { top: '', right: '', color: '', backgroundColor: '', borderRadius: '', 
   width: '', padding: '', fontFamily: '', border: '', acceptBtnId: '', rejectBtnId: '', receiverId: '',
   opacity: '' }
-- Make Item Draggable: jlib.makeDraggable(dragClassname, dropzoneClassname);
+- Make Item Draggable: jlib.makeDraggable(draggableItemClassname, dropzoneClassname);
