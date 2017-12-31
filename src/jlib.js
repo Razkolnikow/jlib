@@ -519,8 +519,7 @@ var jlib = {
 
       function dropItem(e) {
         var hole1 = e.target;
-        if (hole1.className.indexOf(dropzoneClassname) >= 0 
-            && hole1.children.length === 0) {
+        if (hole1.className.indexOf(dropzoneClassname) >= 0) {
             hole1.appendChild(draggedItem);
         }
       }
