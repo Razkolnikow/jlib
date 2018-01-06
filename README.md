@@ -30,3 +30,5 @@
   width: '', padding: '', fontFamily: '', border: '', acceptBtnId: '', rejectBtnId: '', receiverId: '',
   opacity: '' }
 - Make Item Draggable: jlib.makeDraggable(draggableItemClassname, dropzoneClassname);
+- Modal Images: jlib.modalImages();
+**There is html structure example in index.html**

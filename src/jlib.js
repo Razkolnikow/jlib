@@ -523,5 +523,27 @@ var jlib = {
             hole1.appendChild(draggedItem);
         }
       }
+    },
+    modalImages: function () {
+      var imgs = document.getElementsByClassName('jlib-clickable-image');
+
+      for (var i = 0; i < imgs.length; i++) {
+        var image = imgs[i];
+        image.addEventListener('click', function (ev) {
+          var id = ev.target.id;
+          var modal = document.getElementsByName(id)[0];
+          var modalImgId = id.substr(id.indexOf('-') + 1);
+          var modalImg = document.getElementById(modalImgId);
+          var caption = document.getElementById("caption-" + modalImgId);
+
+          modal.style.display = "block";
+          modalImg.src = ev.target.src;
+
+          var close = document.querySelector('div[name=' + id + ']>.jlib-close');
+          close.onclick = function (ev) {
+            modal.style.display = 'none';
+          }
+        })
+      }
     }
 }
