@@ -530,6 +530,7 @@ var jlib = {
       for (var i = 0; i < imgs.length; i++) {
         var image = imgs[i];
         image.addEventListener('click', function (ev) {
+          var currentImage = ev.target;
           var id = ev.target.id;
           var modal = document.getElementsByName(id)[0];
           var modalImgId = id.substr(id.indexOf('-') + 1);
@@ -543,6 +544,36 @@ var jlib = {
           close.onclick = function (ev) {
             modal.style.display = 'none';
           }
+
+          var prev = document.querySelector('div[name=' + id + ']>.jlib-prev');
+          prev.addEventListener('click', function (ev) {
+            var prevSibling = currentImage.previousElementSibling;
+            if (prevSibling) prevSibling = prevSibling.previousElementSibling;
+            if (prevSibling) {
+              var source = prevSibling.src;
+              if (source) {
+                modalImg.src = source;
+                var number = Number(currentImage.getAttribute('name'));
+                number--;
+                currentImage = document.querySelector('.jlib-clickable-image[name=' + '"' + number + '"]');
+              }   
+            }                      
+          });
+
+          var next = document.querySelector('div[name=' + id + ']>.jlib-next');
+          next.addEventListener('click', function (ev) {
+            var nextSibling = currentImage.nextElementSibling;
+            if (nextSibling) nextSibling = nextSibling.nextElementSibling;
+            if (nextSibling) {
+              var source = nextSibling.src;
+              if (source)  {
+                modalImg.src = source;
+                var number = Number(currentImage.getAttribute('name'));
+                number++;
+                currentImage = document.querySelector('.jlib-clickable-image[name=' + '"' + number + '"]');
+              }
+            }            
+          });
         })
       }
     }
