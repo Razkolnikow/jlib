@@ -576,5 +576,13 @@ var jlib = {
           });
         })
       }
+    },
+    progressBar: function () {
+      var progressBars = document.getElementsByClassName('jlib-progress');
+      for (var i = 0; i < progressBars.length; i++) {
+        var progress = progressBars[i];
+        var percents = progress.textContent;
+        progress.style.width = percents;
+      }
     }
 }

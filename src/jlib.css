@@ -185,4 +185,16 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+.jlib-progress-container {
+  width: 100%;
+  background-color: rgb(245, 40, 40); 
+}
 
+.jlib-progress {
+  text-align: right; /* Right-align text */
+  padding-right: 20px; /* Add some right padding */
+  line-height: 20px; /* Set the line-height to center the text inside the skill bar, and to expand the height of the container */
+  color: white; /* White text color */
+  background-color: rgb(69, 173, 69);
+  box-sizing:border-box;
+}

@@ -15,7 +15,9 @@
                 <a class="jlib-next">&#10095;</a>
                 <span class="jlib-close">&times;</span>
                 <img class="jlib-modal-image-content" id="img1">
-                <div id="caption-img1" class="jlib-modalimg-caption">Sun Glasses</div>
+                <div id="caption-img1" class="jlib-modalimg-caption" name="1">
+                    Sun Glasses
+                </div>
             </div>
             <img id="my-img2" class="jlib-clickable-image" src="./pics/github-mark.png" alt="github pic" name='2'>
             <div class="jlib-modal-image" name="my-img2">
@@ -23,7 +25,17 @@
                 <a class="jlib-next">&#10095;</a>
                 <span class="jlib-close">&times;</span>
                 <img class="jlib-modal-image-content" id="img2">
-                <div id="caption-img2" class="jlib-modalimg-caption">Github</div>
+                <div id="caption-img2" class="jlib-modalimg-caption" name="2">
+                    Github
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="width: 250px;">
+        <div class="jlib-progress-container">
+            <div class="jlib-progress">
+                95%
             </div>
         </div>
     </div>
@@ -31,6 +43,7 @@
     </script>
     <script type="text/javascript">
         jlib.modalImages(); 
+        jlib.progressBar();
     </script>
   </body>
 </html>
