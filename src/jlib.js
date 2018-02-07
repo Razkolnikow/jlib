@@ -585,8 +585,8 @@ var jlib = {
         progress.style.width = percents;
       }
     },
-    loader: function () {
-      var container = document.querySelector('.container');
+    loader: function (classToHide) {
+      var container = document.querySelector('.' + classToHide);
       container.style.visibility = 'hidden';
       setTimeout(function () {
         var loader = document.getElementById('jlib-loader');
