@@ -584,5 +584,14 @@ var jlib = {
         var percents = progress.textContent;
         progress.style.width = percents;
       }
-    }
+    },
+    loader: function () {
+      var container = document.querySelector('.container');
+      container.style.visibility = 'hidden';
+      setTimeout(function () {
+        var loader = document.getElementById('jlib-loader');
+        loader.remove();
+        container.style.visibility = 'visible';
+      }, 700)
+    }    
 }

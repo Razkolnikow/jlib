@@ -7,7 +7,8 @@
   </head>
   <body>
     <!-- modal image example -->
-    <div class="modal-image-sample">
+    <div class="container">
+        <div class="modal-image-sample">
         <div>
             <img id="my-img1" class="jlib-clickable-image" src="./pics/pic.jpeg" alt="picture" name='1'>            
             <div class="jlib-modal-image" name="my-img1">
@@ -39,11 +40,18 @@
             </div>
         </div>
     </div>
+    </div>
+    
+
+    <div id="jlib-loader">
+
+    </div>
     <script type="text/javascript" src="jlib.js">        
     </script>
     <script type="text/javascript">
         jlib.modalImages(); 
         jlib.progressBar();
+        jlib.loader();
     </script>
   </body>
 </html>
